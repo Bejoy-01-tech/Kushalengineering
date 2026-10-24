@@ -1,0 +1,11 @@
+# Railway Configuration for Kushal Engineering Backend API
+# This deploys the Express backend (server/index.js) to Railway
+
+[build]
+  # Railway auto-detects Node.js from package.json
+  # No special build step needed
+
+[deploy]
+  startCommand = "node --env-file=.env server/index.js"
+  restartPolicyType = "ON_FAILURE"
+  restartPolicyMaxRetries = 10
